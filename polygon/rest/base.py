@@ -1,3 +1,4 @@
+import time
 import certifi
 import json
 import urllib3
@@ -180,6 +181,9 @@ class BaseClient:
             for t in decoded[result_key]:
                 yield deserializer(t)
             if "next_url" in decoded:
+                wait_time = 20
+                logging.info(f"Waiting {wait_time} secs to avoid throttling")
+                time.sleep(wait_time)
                 path = decoded["next_url"].replace(self.BASE, "")
                 params = {}
             else:
