@@ -19,8 +19,8 @@ jobs:
         uses: abatilo/actions-poetry@v2
       # - name: Configure Poetry
       #   run: poetry config pypi-token.pypi ${{ secrets.POETRY_HTTP_BASIC_PYPI_PASSWORD }}
-      - name: Disable PyPi publish
-        run: poetry config publish.enabled false
+      # - name: Disable PyPi publish
+      #   run: poetry config publish.enabled false
       - name: Install pypi deps
         run: poetry install
       - name: Get tag
