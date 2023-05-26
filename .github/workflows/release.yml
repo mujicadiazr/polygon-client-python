@@ -3,9 +3,7 @@ on:
   push:
     tags:
       - v*
-permissions:
-  contents: read
-  actions: write
+permissions: write-all
 jobs:
   test:
     runs-on: ubuntu-latest
